@@ -1,0 +1,48 @@
+[
+  {
+    "id": "8df8b5ff-a4af-426f-b4bd-e57cfb882bce",
+    "type": "LOG", "level": "INFO",
+    "createdAt": 1782221121603,
+    "payload": {
+      "payloadType": "LOG",
+      "source": "SigningKeyLifecycleScheduler",
+      "level": "LIFECYCLE_CHECK_STARTED",
+      "message": "Starting signing key lifecycle evaluation.",
+      "fields": { "instanceId": "f516c69ca51a", "traceId": "6a3a893f847ed2d747f95ea7aaead2c2" }
+    }
+  },
+  {
+    "id": "5797ead0-4c0a-43c0-afbc-7e38d75ed199",
+    "type": "EVENT", "level": "INFO",
+    "createdAt": 1782221122519,
+    "payload": {
+      "payloadType": "EVENT",
+      "source": "SigningKeySourceCoordinator",
+      "name": "SigningKeySourceCoordinator_SUCCESS",
+      "data": { "operation": "WARMUP_FETCH", "status": "COMPLETED", "executionTimeMs": 814, "instanceId": "f516c69ca51a", "traceId": "6a3a893f847ed2d747f95ea7aaead2c2" }
+    }
+  },
+  {
+    "id": "05dd6394-5d56-4243-874a-71344760bfad",
+    "type": "EVENT", "level": "INFO",
+    "createdAt": 1782221125613,
+    "payload": {
+      "payloadType": "EVENT",
+      "source": "SigningKeyLifecycleManagerImpl",
+      "name": "SIGNING_KEY_CREATED",
+      "data": { "keyId": "rsa-1782221123620-3b803784", "rotationReason": "expiration", "instanceId": "f516c69ca51a", "traceId": "6a3a893f847ed2d747f95ea7aaead2c2" }
+    }
+  },
+  {
+    "id": "3c19a47f-88fa-4d31-b6c1-214380a72f91",
+    "type": "LOG", "level": "INFO",
+    "createdAt": 1782221125808,
+    "payload": {
+      "payloadType": "LOG",
+      "source": "SigningKeyLifecycleScheduler",
+      "level": "LIFECYCLE_CHECK_SUCCESS",
+      "message": "Lifecycle evaluation completed successfully.",
+      "fields": { "instanceId": "f516c69ca51a", "traceId": "6a3a893f847ed2d747f95ea7aaead2c2" }
+    }
+  }
+]

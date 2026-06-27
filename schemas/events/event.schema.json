@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dtl-spec.io/schemas/v1/event.schema.json",
+  "title": "DTL Event Envelope",
+  "type": "object",
+  "required": ["id", "type", "level", "createdAt", "payload"],
+  "properties": {
+    "id":        { "type": "string", "format": "uuid" },
+    "type":      { "type": "string", "enum": ["EVENT", "LOG"] },
+    "level":     { "type": "string", "enum": ["INFO","WARN","ERROR","DEBUG","FATAL"] },
+    "createdAt": { "type": "integer", "description": "unix milliseconds" },
+    "payload": {
+      "type": "object",
+      "required": ["payloadType", "source"],
+      "properties": {
+        "payloadType": { "type": "string", "enum": ["EVENT", "LOG"] },
+        "source":      { "type": "string" }
+      }
+    }
+  }
+}
