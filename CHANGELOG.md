@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.0] — 2026-06-24
+
+### DTL v2.0
+- Introduced the Dialect model — Event, Log, Infrastructure as distinct grammars
+- Event dialect: `outcome.phase + outcome.result` replaces ambiguous `status + conditionState`
+- Log dialect: grammar `narrator + narrative + state` translated to payload fields
+  `resource` (narrator), `message` (narrative), `state`
+- Infrastructure dialect promoted as first-class (from DTL-INFRA extension)
+- Context layer formalized: `traceId`, `instanceId`, `tenantId`, `correlationId`
+- `evidence` field added to Infrastructure dialect states
+- Status/Evidence separation formalized as design principle
+
 ## [1.0.0] — 2026-06-24
 
 ### DTL v1.0

@@ -3,20 +3,88 @@
   "$id": "https://dtl-spec.io/schemas/v1/patterns/coordinator.schema.json",
   "title": "DTL Coordinator Pattern",
   "type": "object",
-  "required": ["payloadType", "source", "name", "data"],
+  "required": [
+    "payloadType",
+    "source",
+    "name",
+    "data"
+  ],
   "properties": {
-    "payloadType": { "const": "EVENT" },
-    "source":      { "type": "string" },
-    "name":        { "type": "string", "pattern": "^[A-Z][A-Z0-9_]+$" },
+    "payloadType": {
+      "const": "EVENT"
+    },
+    "source": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]+$"
+    },
     "data": {
       "type": "object",
-      "required": ["operation","status","executionTimeMs","instanceId","traceId"],
+      "required": [
+        "operation",
+        "executionTimeMs",
+        "instanceId",
+        "traceId",
+        "outcome"
+      ],
       "properties": {
-        "operation":       { "type": "string" },
-        "status":          { "type": "string" },
-        "executionTimeMs": { "type": "integer", "minimum": 0 },
-        "instanceId":      { "type": "string" },
-        "traceId":         { "type": "string", "pattern": "^[a-f0-9]{32}$" }
+        "operation": {
+          "type": "string"
+        },
+        "executionTimeMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "instanceId": {
+          "type": "string"
+        },
+        "traceId": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{32}$"
+        },
+        "outcome": {
+          "type": "object",
+          "required": [
+            "phase",
+            "result"
+          ],
+          "properties": {
+            "phase": {
+              "type": "string",
+              "enum": [
+                "COMPLETED",
+                "FAILED",
+                "SKIPPED"
+              ],
+              "description": "Execution mechanics"
+            },
+            "result": {
+              "type": "string",
+              "description": "Domain semantics of the outcome"
+            }
+          }
+        },
+        "reason": {
+          "type": "object",
+          "description": "Required when phase is SKIPPED",
+          "properties": {
+            "component": {
+              "type": "string"
+            },
+            "instance": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string",
+              "enum": [
+                "UNAVAILABLE",
+                "DEGRADED"
+              ]
+            }
+          }
+        }
       }
     }
   }
