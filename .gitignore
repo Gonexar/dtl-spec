@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Validator (when implemented)
+node_modules/
+dist/
+build/
+*.jar
+target/
+
+# Local test files
+*.local.json
+*.test.json
+scratch/
+
+# Secrets — never commit
+*.env
+*.key
+*.pem
