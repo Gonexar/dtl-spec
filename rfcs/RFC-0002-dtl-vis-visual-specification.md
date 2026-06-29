@@ -47,6 +47,8 @@ O diagrama DTL-VIS é composto por seis elementos estruturais fixos:
 │  PAINEL DE RODAPÉ: Legenda | Estatísticas | Performance | Insights               │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
+<img width="1536" height="1024" alt="ChatGPT Image 22 de jun  de 2026, 23_06_04" src="https://github.com/user-attachments/assets/61d909f7-af44-4d5d-9974-bcb4cf2182bc" />
+<img width="1536" height="1024" alt="ChatGPT Image 27 de jun  de 2026, 07_58_44" src="https://github.com/user-attachments/assets/1e6e087d-7a1f-44dd-b86a-cc2573b89979" />
 
 ---
 
